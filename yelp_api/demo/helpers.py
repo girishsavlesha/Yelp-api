@@ -7,8 +7,8 @@ yelp_api = YelpAPI(settings.YELP_API_KEY)
 
 
 def parse_yelp_obj(yelp_obj, db_obj):
-    attr_list = [['yelp_id', 'id'], ['name', 'name'], ['is_closed', 'is_closed'], ['image_url', 'image_url'], ['phone', 'phone'], ['display_phone', 'display_phone'], ['url', 'url'], ['review_count', 'review_count'], ['rating', 'rating']]
     for k in yelp_obj:
+        attr_list = [['yelp_id', 'id'], ['name', 'name'], ['is_closed', 'is_closed'], ['image_url', 'image_url'], ['phone', 'phone'], ['display_phone', 'display_phone'], ['url', 'url'], ['review_count', 'review_count'], ['rating', 'rating']]
         for attr in attr_list:
             setattr(db_obj, attr[0], k[attr[1]])
         db_obj.display_address = k['location']['display_address'][0]

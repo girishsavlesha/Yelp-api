@@ -1,0 +1,11 @@
+{% load static %}
+<div class='container'>
+    {% block 'content'%}
+    <ul>
+        {% for obj in object_list %}
+        <li><a href="/resco/restaurant/{{ obj.id }}/" >{{ obj.Restaurant_Name }}</a><br>{{ obj.City }}</li>
+        {% endfor %}
+    </ul>
+
+    {% endblock %}
+</div>

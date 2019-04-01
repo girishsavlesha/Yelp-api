@@ -10,7 +10,8 @@
   </head>
   <body>
     <div class="s013">
-      <form>
+      <form method = "get" action= "/searchresult/">
+       {% csrf_token %}
         <fieldset>
           <legend>QUICK FIND YOUR RESTAURANT</legend>
         </fieldset>
@@ -18,12 +19,13 @@
           <div class="left">
             <div class="input-wrap first">
               <div class="input-field first">
+              
                 <label>WHAT</label>
                 <input type="text" name ="search" placeholder="Restaurant" />
               </div>
             </div>
           </div>
-          <button class="btn-search" type="submit" >SEARCH</button>
+          <button class="btn-search" type="submit" href="{% url "searchresult" %}">SEARCH</button>
         </div>
       </form>
     </div>

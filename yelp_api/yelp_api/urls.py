@@ -20,5 +20,5 @@ from demo import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/',views.search,name="search"),
-    # path('searchresult/',views.search_result, name="search_result")
+    path('searchresult/',views.search_result, name="searchresult")
 ]
